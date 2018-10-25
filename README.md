@@ -7,3 +7,15 @@ liferay.workspace.bundle.url=https://api.liferay.com/downloads/portal/7.1.10/lif
 liferay.workspace.environment=local
 liferay.workspace.bundle.token.download=true
 ```
+
+Executar:
+
+```
+./setup.sh init
+```
+
+Depois:
+
+```
+blade server start
+```
