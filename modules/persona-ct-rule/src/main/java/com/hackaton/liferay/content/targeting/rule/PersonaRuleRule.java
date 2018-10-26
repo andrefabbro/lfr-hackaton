@@ -62,9 +62,9 @@ public class PersonaRuleRule extends BaseJSPRule {
 
 		User user = anonymousUser.getUser();
 
-		String userName = user.getScreenName();
+		Long userId = user.getUserId();
 
-		URL url = new URL("https://portal-symposium.lfr.io/o/extrato-rest-service/cliente/persona/" + userName);
+		URL url = new URL("http://localhost:8080/o/extrato-rest-service/cliente/persona/" + userId);
 
 		HttpURLConnection connection = (HttpURLConnection) url.openConnection();
 
