@@ -1,0 +1,8 @@
+{
+	"id": "documentlibrary",
+	"memory": 768,
+	"cpu": 1,
+	"volumes": {
+	  "dl": "/document_library"
+	}
+}

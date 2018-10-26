@@ -1,0 +1,11 @@
+{
+	"id": "database",
+	"image": "mariadb:10.2.16",
+	"memory": 2048,
+	"cpu": 2,
+	"env": {
+		"MYSQL_DATABASE": "ldxp",
+		"MYSQL_ROOT_PASSWORD": "root"
+	},
+	"zeroDowntime": false
+}

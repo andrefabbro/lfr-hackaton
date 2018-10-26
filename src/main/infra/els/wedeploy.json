@@ -1,0 +1,9 @@
+{
+	"id": "elasticsearch",
+	"cpu": 4,
+	"memory": 4096,
+	"env": {
+		"ES_JAVA_OPTS": "-Xms4g -Xmx4g"
+	},
+	"zeroDowntime": false
+}

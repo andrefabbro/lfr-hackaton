@@ -1,0 +1,14 @@
+{
+	"id": "portal",
+	"image": "wedeploy/liferay:7.1.0-ga1-1.1",
+	"memory": 4096,
+	"cpu": 16,
+	"dependencies": [
+		"database",
+		"elasticsearch",
+		"documentlibrary"
+	],
+	"volumes": {
+	  "dl": "/document_library"
+	}
+}
