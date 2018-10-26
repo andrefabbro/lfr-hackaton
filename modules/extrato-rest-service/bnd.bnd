@@ -1,0 +1,4 @@
+Bundle-Name: extrato-rest-service
+Bundle-SymbolicName: br.com.hackaton.rest
+Bundle-Version: 1.0.0
+Liferay-Configuration-Path: /configuration
