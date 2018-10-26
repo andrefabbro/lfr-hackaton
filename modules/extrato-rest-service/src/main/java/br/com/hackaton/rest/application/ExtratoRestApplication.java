@@ -13,6 +13,12 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.core.Application;
 
 import org.osgi.service.component.annotations.Component;
+import org.osgi.service.component.annotations.Reference;
+
+import com.liferay.portal.kernel.exception.PortalException;
+import com.liferay.portal.kernel.model.User;
+import com.liferay.portal.kernel.service.UserLocalService;
+import com.liferay.portal.kernel.service.UserLocalServiceUtil;
 
 /**
  * @author André Fabbro
@@ -24,6 +30,9 @@ public class ExtratoRestApplication extends Application {
 	private Map<String, String> extratos;
 	
 	private Map<String, String> personas;
+	
+	@Reference
+	private UserLocalService userLocalService;
 	
 	public Set<Object> getSingletons() {
 		return Collections.<Object>singleton(this);
@@ -130,15 +139,37 @@ public class ExtratoRestApplication extends Application {
 	@GET
 	@Path("/persona/{username}")
 	@Produces("text/plain")
-	public String getPersona(@PathParam("username") String username) {
-		return personas.get(username);
+	public String getPersona(@PathParam("username") String userId) {
+		
+		User user = null;
+		try {
+			user = userLocalService.getUser(new Long(userId));
+			return personas.get(user.getScreenName());
+		} catch (NumberFormatException e) {
+			e.printStackTrace();
+		} catch (PortalException e) {
+			e.printStackTrace();
+		}
+		
+		return "";
 	}
 
 	@GET
 	@Path("/extrato/{username}")
 	@Produces("application/json")
-	public String getExtrato(@PathParam("username") String username) {
-		return extratos.get(username);
+	public String getExtrato(@PathParam("username") String userId) {
+		
+		User user = null;
+		try {
+			user = userLocalService.getUser(new Long(userId));
+			return extratos.get(user.getScreenName());
+		} catch (NumberFormatException e) {
+			e.printStackTrace();
+		} catch (PortalException e) {
+			e.printStackTrace();
+		}
+		
+		return "";
 	}
 
 }
