@@ -10,16 +10,16 @@ import java.util.Date;
  * @author André Fabbro
  *
  */
-public class ExtratoLancamento implements Serializable {
+public class Lancamento implements Serializable {
 
 	private static final long serialVersionUID = 1027722192416580175L;
 
 	private Date data;
 
-	private String estabelecimento;
+	private String descricao;
 
-	private String valor;
-
+	private Double valor;
+	
 	public Date getData() {
 		return data;
 	}
@@ -28,19 +28,19 @@ public class ExtratoLancamento implements Serializable {
 		this.data = data;
 	}
 
-	public String getEstabelecimento() {
-		return estabelecimento;
+	public String getDescricao() {
+		return descricao;
 	}
 
-	public void setEstabelecimento(String estabelecimento) {
-		this.estabelecimento = estabelecimento;
+	public void setDescricao(String descricao) {
+		this.descricao = descricao;
 	}
 
-	public String getValor() {
+	public Double getValor() {
 		return valor;
 	}
 
-	public void setValor(String valor) {
+	public void setValor(Double valor) {
 		this.valor = valor;
 	}
 
