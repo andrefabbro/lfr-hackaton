@@ -1,6 +1,0 @@
-Bundle-Name: Cetelem Contract Eligibility Rule
-Bundle-SymbolicName: br.com.cetelem.content.targeting.rule.contract.eligibility
-Bundle-Version: 1.0.0
-Web-ContextPath: /contract-eligibility-rule
-Import-Package: com.liferay.content.targeting.anonymous.users.model;version="[2.0,3)",com.liferay.content.targeting.api.model;version="[4.0,5)",com.liferay.content.targeting.model;version="[3.0,4)",com.liferay.expando.kernel.model;version="[1.0,2)",com.liferay.portal.kernel.exception;version="[7.0,8)",com.liferay.portal.kernel.log;version="[7.0,8)",com.liferay.portal.kernel.model;version="[1.0,2)",com.liferay.portal.kernel.service;version="[1.2,2)",com.liferay.portal.kernel.util;version="[7.2,8)",javax.annotation,javax.portlet;version="[2.0,3)",javax.servlet;version="[3.0,4)",javax.servlet.http;version="[3.0,4)",javax.net.ssl,javax.net
-Include-Resource: @retrofit-2.3.0.jar,@okhttp-3.8.0.jar,@okio-1.13.0.jar,@converter-gson-2.3.0.jar,@gson-2.7.jar

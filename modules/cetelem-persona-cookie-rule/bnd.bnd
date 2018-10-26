@@ -1,4 +1,0 @@
-Bundle-Name: Cetelem Persona Cookie Rule
-Bundle-SymbolicName: br.com.cetelem.content.targeting.persona
-Bundle-Version: 1.0.0
-Web-ContextPath: /content-targeting-rule-cetelem-persona-cookie-rule
