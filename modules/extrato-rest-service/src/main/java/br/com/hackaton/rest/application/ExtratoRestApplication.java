@@ -131,7 +131,7 @@ public class ExtratoRestApplication extends Application {
 		        "}";
 	    
 	    extratos.put("joaosilva", extrato1);
-	    extratos.put("fulano", extrato2);
+	    extratos.put("pedrocosta", extrato2);
 	    extratos.put("joseteixeira", extrato3);
 		return "Dados populados!";
 	}
