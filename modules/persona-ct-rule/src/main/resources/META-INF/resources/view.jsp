@@ -7,6 +7,7 @@ taglib uri="http://liferay.com/tld/ui" prefix="liferay-ui" %>
 <%@ page import="com.liferay.portal.kernel.util.GetterUtil" %>
 
 <%@ page import="java.util.Map" %>
+<%@ page import="com.hackaton.liferay.content.targeting.rule.persona.Persona" %>
 
 <liferay-theme:defineObjects />
 
@@ -14,10 +15,11 @@ taglib uri="http://liferay.com/tld/ui" prefix="liferay-ui" %>
 
 <%
 Map<String, Object> context = (Map<String, Object>)request.getAttribute("context");
+
+String persona = (String) context.get("persona");
 %>
 
-<aui:select label="PersonaRuleRule" name="matches" value='<%= GetterUtil.getBoolean(context.get("matches")) %>'>
-	<aui:option label="the-user-always-matches-this-rule" value="true" />
-
-	<aui:option label="the-user-never-matches-this-rule" value="false" />
+<aui:select label="cetelem-personas" name="persona" value="<%= persona %>">
+	<aui:option label="cetelem-persona-travel" value="<%= Persona.TRAVEL %>" />
+	<aui:option label="cetelem-persona-gourmet" value="<%= Persona.GOURMET %>" />
 </aui:select>

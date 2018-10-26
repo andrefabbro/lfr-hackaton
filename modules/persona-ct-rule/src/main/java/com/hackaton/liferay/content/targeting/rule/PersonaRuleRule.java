@@ -1,5 +1,7 @@
 package com.hackaton.liferay.content.targeting.rule;
 
+import com.hackaton.liferay.content.targeting.rule.persona.Persona;
+import com.hackaton.liferay.content.targeting.rule.persona.PersonaResolver;
 import com.liferay.content.targeting.anonymous.users.model.AnonymousUser;
 import com.liferay.content.targeting.api.model.BaseJSPRule;
 import com.liferay.content.targeting.api.model.Rule;
@@ -12,6 +14,11 @@ import com.liferay.portal.kernel.language.LanguageUtil;
 import com.liferay.portal.kernel.util.GetterUtil;
 import com.liferay.portal.kernel.util.ResourceBundleUtil;
 
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.io.Reader;
+import java.net.HttpURLConnection;
+import java.net.URL;
 import java.util.Locale;
 import java.util.Map;
 import java.util.ResourceBundle;
@@ -26,6 +33,8 @@ import org.osgi.service.component.annotations.Activate;
 import org.osgi.service.component.annotations.Component;
 import org.osgi.service.component.annotations.Deactivate;
 import org.osgi.service.component.annotations.Reference;
+
+import com.liferay.portal.kernel.model.User;
 
 /**
  * @author andrefabbro
@@ -51,13 +60,32 @@ public class PersonaRuleRule extends BaseJSPRule {
 			AnonymousUser anonymousUser)
 		throws Exception {
 
-		// You can obtain the rule configuration from the type settings
+		User user = anonymousUser.getUser();
+
+		String userName = user.getScreenName();
+
+		URL url = new URL("https://portal-symposium.lfr.io/o/extrato-rest-service/cliente/persona/" + userName);
+
+		HttpURLConnection connection = (HttpURLConnection) url.openConnection();
+
+		connection.setRequestMethod("GET");
+		connection.setReadTimeout(15*1000);
+		connection.connect();
+
+		BufferedReader reader = new BufferedReader(new InputStreamReader(connection.getInputStream()));
+		StringBuilder stringBuilder = new StringBuilder();
+
+		String line = null;
+		while ((line = reader.readLine()) != null)
+		{
+			stringBuilder.append(line);
+		}
 
 		String typeSettings = ruleInstance.getTypeSettings();
 
-		// Return true if the anonymous user matches this rule
+		Persona persona = PersonaResolver.getInstance().getPersona(stringBuilder.toString().toLowerCase());
 
-		return _getMatches(typeSettings);
+		return _getPersona(typeSettings).equals(persona.getLabel());
 	}
 
 	@Override
@@ -79,12 +107,12 @@ public class PersonaRuleRule extends BaseJSPRule {
 	public String getSummary(RuleInstance ruleInstance, Locale locale) {
 		String typeSettings = ruleInstance.getTypeSettings();
 
-		boolean matches = _getMatches(typeSettings);
+		String persona = _getPersona(typeSettings);
 
 		ResourceBundle resourceBundle = ResourceBundleUtil.getBundle(
 			"content.Language", locale, getClass());
 
-		if (matches) {
+		if (persona.equals(Persona.TRAVEL)) {
 			return LanguageUtil.get(
 				resourceBundle, "the-user-always-matches-this-rule");
 		}
@@ -101,9 +129,9 @@ public class PersonaRuleRule extends BaseJSPRule {
 
 		JSONObject jsonObject = JSONFactoryUtil.createJSONObject();
 
-		boolean matches = GetterUtil.getBoolean(values.get("matches"));
+		String persona = GetterUtil.getString(values.get("persona"));
 
-		jsonObject.put("matches", matches);
+		jsonObject.put("persona", persona);
 
 		return jsonObject.toString();
 	}
@@ -122,13 +150,13 @@ public class PersonaRuleRule extends BaseJSPRule {
 		RuleInstance ruleInstance, Map<String, Object> context,
 		Map<String, String> values) {
 
-		boolean matches = false;
+		String persona = "";
 
 		if (!values.isEmpty()) {
 
 			// Value from the request in case of an error
 
-			matches = GetterUtil.getBoolean(values.get("matches"));
+			persona = GetterUtil.getString(values.get("persona"));
 		}
 		else if (ruleInstance != null) {
 
@@ -136,23 +164,23 @@ public class PersonaRuleRule extends BaseJSPRule {
 
 			String typeSettings = ruleInstance.getTypeSettings();
 
-			matches = _getMatches(typeSettings);
+			persona = _getPersona(typeSettings);
 		}
 
-		context.put("matches", matches);
+		context.put("persona", persona);
 	}
 
-	private boolean _getMatches(String typeSettings) {
+	private String _getPersona(String typeSettings) {
 		try {
 			JSONObject jsonObject = JSONFactoryUtil.createJSONObject(
 				typeSettings);
 
-			return jsonObject.getBoolean("matches");
+			return jsonObject.getString("persona");
 		}
 		catch (JSONException jsone) {
 		}
 
-		return false;
+		return "";
 	}
 
 }
