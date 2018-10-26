@@ -1,0 +1,11 @@
+{
+	"liferayDir": "/Users/franciscodias/workspace/lfr-hackaton/bundles",
+	"webpack": {
+		"rules": [
+			{
+				"test": "src\\/.*\\.js$",
+				"use": "babel-loader"
+			}
+		]
+	}
+}
