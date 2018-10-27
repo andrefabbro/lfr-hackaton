@@ -5,47 +5,11 @@ import axios from 'axios';
 export default class AppComponent extends JSXComponent {
 
 	created() {
-		this.state.extrato = {
-			extrato: {
-				lancamentos: [],
-				total: 0
-			}
-		}
-		// this.state.extrato = {
-		// 	"extrato": {
-		// 		"dataInicio": "10/10/2018",
-		// 		"dataFim": "10/01/2018",
-		// 		"total": "200.00",
-		// 		"lancamentos": [{
-		// 				"data": "10/01/2018",
-		// 				"descricao": "Hello World",
-		// 				"valor": "104.34"
-		// 			},
-		// 			{
-		// 				"data": "10/01/2018",
-		// 				"descricao": "Hello World",
-		// 				"valor": "104.34"
-		// 			}, {
-		// 				"data": "10/01/2018",
-		// 				"descricao": "Hello World",
-		// 				"valor": "104.34"
-		// 			}, {
-		// 				"data": "10/01/2018",
-		// 				"descricao": "Hello World",
-		// 				"valor": "104.34"
-		// 			}
-		// 		]
-		// 	}
-		// }
 		axios.get(`/o/extrato-rest-service/cliente/extrato/${Liferay.ThemeDisplay.getUserId()}`).then((response) => {
 			this.state.extrato = response.data;
 		}).catch((e) => {
 			console.error(e);
 		})
-		// axios.get(`https://portal-symposium.lfr.io/o/extrato-rest-service/cliente/extrato/joaosilva`).then((response) => {
-		// 	console.log(response)
-		// 	this.state.extrato = response.data;
-		// })
 	}
 
 	renderExtrato() {
@@ -143,9 +107,13 @@ export default class AppComponent extends JSXComponent {
     }
 }
 
-// AppComponent.STATE = {
-// 	extrato: {
-// 		lancamentos: [],
-// 		total: 0
-// 	}
-// }
+AppComponent.STATE = {
+	extrato: {
+		value: {
+			extrato: {
+				lancamentos: [],
+				total: 0
+			}
+		}
+	}
+}
