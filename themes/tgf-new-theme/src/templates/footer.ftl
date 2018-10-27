@@ -3,7 +3,7 @@
 				
 
 					<div class="text-md-left hidden-sm">
-						<@liferay.navigation_menu instance_id="footer_navigation" />
+						<div class="footer-nav"> <div> <div><strong>More</strong></div> <div><a href="">About Us</a></div> <div><a href="">FAQ</a></div> </div> <div> <div><strong>Privacy</strong></div> <div><a href="">Our Policies</a></div> <div><a href="">Terms of Use</a></div> </div> <div> <div><strong>Contact</strong></div> <div><a href="">Contact Us</a></div> <div><a href="">Carrers</a></div> </div> </div>
 					</div>
 
 					
