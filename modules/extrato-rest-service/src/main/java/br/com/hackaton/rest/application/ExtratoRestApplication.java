@@ -53,24 +53,24 @@ public class ExtratoRestApplication extends Application {
 	        "    \"extrato\": {\n" + 
 	        "        \"dataInicio\": \"10/10/2018\",\n" + 
 	        "        \"dataFim\": \"10/01/2018\",\n" + 
-	        "        \"total\": \"200.00\",\n" + 
+	        "        \"total\": \"430.00\",\n" + 
 	        "        \"lancamentos\": [{\n" + 
 	        "                \"data\": \"10/01/2018\",\n" + 
-	        "                \"descricao\": \"Hello World\",\n" + 
-	        "                \"valor\": \"104.34\"\n" + 
+	        "                \"descricao\": \"Extrabom\",\n" + 
+	        "                \"valor\": \"100.00\"\n" + 
 	        "            },\n" + 
 	        "            {\n" + 
 	        "                \"data\": \"10/01/2018\",\n" + 
-	        "                \"descricao\": \"Hello World\",\n" + 
-	        "                \"valor\": \"104.34\"\n" + 
+	        "                \"descricao\": \"Netflix\",\n" + 
+	        "                \"valor\": \"30.00\"\n" + 
 	        "            }, {\n" + 
 	        "                \"data\": \"10/01/2018\",\n" + 
-	        "                \"descricao\": \"Hello World\",\n" + 
-	        "                \"valor\": \"104.34\"\n" + 
+	        "                \"descricao\": \"Ynga\",\n" + 
+	        "                \"valor\": \"300.00\"\n" + 
 	        "            }, {\n" + 
 	        "                \"data\": \"10/01/2018\",\n" + 
-	        "                \"descricao\": \"Hello World\",\n" + 
-	        "                \"valor\": \"104.34\"\n" + 
+	        "                \"descricao\": \"Walmart\",\n" + 
+	        "                \"valor\": \"200.00\"\n" + 
 	        "            }\n" + 
 	        "        ]\n" + 
 	        "    }\n" + 
@@ -80,24 +80,24 @@ public class ExtratoRestApplication extends Application {
 	        "    \"extrato\": {\n" + 
 	        "        \"dataInicio\": \"10/10/2018\",\n" + 
 	        "        \"dataFim\": \"10/01/2018\",\n" + 
-	        "        \"total\": \"200.00\",\n" + 
+	        "        \"total\": \"3100.00\",\n" + 
 	        "        \"lancamentos\": [{\n" + 
 	        "                \"data\": \"10/01/2018\",\n" + 
-	        "                \"descricao\": \"Hello World\",\n" + 
-	        "                \"valor\": \"50\"\n" + 
+	        "                \"descricao\": \"Avianca\",\n" + 
+	        "                \"valor\": \"2000\"\n" + 
 	        "            },\n" + 
 	        "            {\n" + 
 	        "                \"data\": \"10/01/2018\",\n" + 
-	        "                \"descricao\": \"Hello World\",\n" + 
-	        "                \"valor\": \"50\"\n" + 
+	        "                \"descricao\": \"LATAM\",\n" + 
+	        "                \"valor\": \"900\"\n" + 
 	        "            }, {\n" + 
 	        "                \"data\": \"10/01/2018\",\n" + 
-	        "                \"descricao\": \"Hello World\",\n" + 
-	        "                \"valor\": \"104.34\"\n" + 
+	        "                \"descricao\": \"GOL\",\n" + 
+	        "                \"valor\": \"200.00\"\n" + 
 	        "            }, {\n" + 
 	        "                \"data\": \"10/01/2018\",\n" + 
-	        "                \"descricao\": \"Hello World\",\n" + 
-	        "                \"valor\": \"104.34\"\n" + 
+	        "                \"descricao\": \"Varig\",\n" + 
+	        "                \"valor\": \"0.00\"\n" + 
 	        "            }\n" + 
 	        "        ]\n" + 
 	        "    }\n" + 
@@ -107,24 +107,24 @@ public class ExtratoRestApplication extends Application {
 		        "    \"extrato\": {\n" + 
 		        "        \"dataInicio\": \"10/10/2018\",\n" + 
 		        "        \"dataFim\": \"10/01/2018\",\n" + 
-		        "        \"total\": \"200.00\",\n" + 
+		        "        \"total\": \"10340.00\",\n" + 
 		        "        \"lancamentos\": [{\n" + 
 		        "                \"data\": \"10/01/2018\",\n" + 
-		        "                \"descricao\": \"Hello World\",\n" + 
+		        "                \"descricao\": \"Netflix\",\n" + 
 		        "                \"valor\": \"50\"\n" + 
 		        "            },\n" + 
 		        "            {\n" + 
 		        "                \"data\": \"10/01/2018\",\n" + 
-		        "                \"descricao\": \"Hello World\",\n" + 
-		        "                \"valor\": \"50\"\n" + 
+		        "                \"descricao\": \"Amazon\",\n" + 
+		        "                \"valor\": \"40\"\n" + 
 		        "            }, {\n" + 
 		        "                \"data\": \"10/01/2018\",\n" + 
-		        "                \"descricao\": \"Hello World\",\n" + 
-		        "                \"valor\": \"104.34\"\n" + 
+		        "                \"descricao\": \"Apple\",\n" + 
+		        "                \"valor\": \"10000.00\"\n" + 
 		        "            }, {\n" + 
 		        "                \"data\": \"10/01/2018\",\n" + 
-		        "                \"descricao\": \"Hello World\",\n" + 
-		        "                \"valor\": \"104.34\"\n" + 
+		        "                \"descricao\": \"Posto Total\",\n" + 
+		        "                \"valor\": \"250.00\"\n" + 
 		        "            }\n" + 
 		        "        ]\n" + 
 		        "    }\n" + 
